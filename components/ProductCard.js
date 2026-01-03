@@ -1,16 +1,27 @@
 import Image from "next/image";
 
-export default function ProductCard({ title, price = "$45" }) {
+export default function ProductCard({
+  title,
+  description,
+  image,
+  price,
+  tags = [],
+}) {
   return (
-    <div className="bg-cream rounded-2xl overflow-hidden shadow-sm">
+    <div className="bg-cream rounded-xl overflow-hidden shadow-sm">
 
       {/* Image */}
-      <div className="relative h-[220px] bg-coffee flex items-center justify-center">
-        <span className="text-cream/60 text-sm">Image</span>
+      <div className="relative h-[200px] bg-coffee flex items-center justify-center">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover"
+        />
       </div>
 
       {/* Content */}
-      <div className="p-6 space-y-4">
+      <div className="px-6 py-4 space-y-4">
 
         {/* Title + Favorite */}
         <div className="flex items-center justify-between">
@@ -21,8 +32,8 @@ export default function ProductCard({ title, price = "$45" }) {
         </div>
 
         {/* Tags */}
-        <div className="flex gap-2">
-          {["Bold", "Classic", "Hot"].map(tag => (
+        <div className="flex gap-2 flex-wrap">
+          {tags.map(tag => (
             <span
               key={tag}
               className="px-3 py-1 text-xs rounded-full border border-coffee/40"
@@ -34,13 +45,12 @@ export default function ProductCard({ title, price = "$45" }) {
 
         {/* Description */}
         <p className="text-sm opacity-70 leading-relaxed">
-          Rich and carefully crafted coffee made to deliver depth, aroma,
-          and satisfaction in every sip.
+          {description}
           <span className="text-coffee font-medium cursor-pointer"> See more</span>
         </p>
 
         {/* Price + CTA */}
-        <div className="flex items-center justify-between pt-4">
+        <div className="flex items-center justify-between pt-2">
           <span className="text-3xl font-semibold">{price}</span>
 
           <button className="bg-coffee text-cream px-6 py-3 rounded-xl flex items-center gap-2 hover:opacity-90 transition">

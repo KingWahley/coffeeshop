@@ -1,9 +1,12 @@
 import Image from "next/image";
+import Parallax from "./Parallax";
 
 export default function Hero() {
   return (
-    <section className="relative bg-coffee text-cream overflow-hidden ">
+    <section className="relative bg-coffee text-cream overflow-hidden">
       <div className="max-w-6xl mx-auto px-8 py-20 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+        
+        {/* Left content (static) */}
         <div>
           <h1 className="text-5xl sm:text-5xl lg:text-6xl leading-[1.15] font-semibold">
             Discover The
@@ -45,21 +48,25 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative hidden md:flex justify-end">
-          <span className="absolute top-10 right-0 text-[180px] font-bold opacity-[0.04] select-none">
-            Coffee
-          </span>
+        {/* Right visual (parallax) */}
+        <Parallax speed={0.45}>
+          <div className="relative hidden md:flex justify-end">
+            <span className="absolute top-10 right-0 text-[180px] font-bold opacity-[0.04] select-none">
+              Coffee
+            </span>
 
-          <div className="relative w-[520px] h-[520px] flex items-center justify-center">
-            <Image
-              src="/assets/pngwing.com.png"
-              alt="Cup of coffee"
-              fill
-              className="object-contain"
-              priority
-            />
+            <div className="relative w-[520px] h-[520px] flex items-center justify-center">
+              <Image
+                src="/assets/pngwing.com.png"
+                alt="Cup of coffee"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </div>
-        </div>
+        </Parallax>
+
       </div>
     </section>
   );

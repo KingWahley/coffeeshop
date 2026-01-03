@@ -16,8 +16,8 @@ export default function Navbar() {
   return (
     <>
       {/* Sticky Header */}
-      <header className="sticky top-0 z-50 bg-coffee py-4">
-        <nav className="max-w-6xl mx-auto border border-cream/60 px-6 py-4 flex items-center justify-between text-cream">
+      <header className="sticky top-0 z-50 bg-cream py-4">
+        <nav className="max-w-6xl mx-auto border border-coffee/60 px-6 py-4 flex items-center justify-between text-coffee">
 
           {/* Logo */}
           <h1 className="text-2xl font-semibold tracking-wide">
