@@ -151,7 +151,6 @@ export default function ShopPage() {
                     {isInCart(product.id) ? "✓" : "+"}
                   </button>
 
-                  {/* Tooltip */}
                   <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black text-white text-xs px-2 py-1 opacity-0 group-hover:opacity-100 transition">
                     {isInCart(product.id) ? "Remove from cart" : "Add to cart"}
                   </span>
@@ -163,7 +162,6 @@ export default function ShopPage() {
         {cartOpen && (
           <div className="fixed inset-0 z-50 bg-black/40 flex justify-end">
             <div className="w-full max-w-sm bg-white h-full p-6 overflow-y-auto">
-              {/* Header */}
               <div className="flex items-center justify-between mb-6">
                 <h3 className="font-semibold text-lg">Your Cart</h3>
                 <button onClick={() => setCartOpen(false)} className="text-xl">
@@ -171,19 +169,16 @@ export default function ShopPage() {
                 </button>
               </div>
 
-              {/* Empty state */}
               {cart.length === 0 && (
                 <p className="text-sm opacity-60">Your cart is empty.</p>
               )}
 
-              {/* Items */}
               <div className="space-y-4">
                 {cart.map((item) => (
                   <div
                     key={item.id}
                     className="flex items-center gap-4 border-b pb-4"
                   >
-                    {/* Image */}
                     <div className="relative w-16 h-16 rounded-lg overflow-hidden">
                       <Image
                         src={item.image}
@@ -193,13 +188,11 @@ export default function ShopPage() {
                       />
                     </div>
 
-                    {/* Info */}
                     <div className="flex-1">
                       <p className="font-medium">{item.title}</p>
                       <p className="text-sm opacity-60">Qty: {item.qty}</p>
                     </div>
 
-                    {/* Price + Delete */}
                     <div className="text-right space-y-1">
                       <p className="font-semibold">${item.price * item.qty}</p>
                       <button

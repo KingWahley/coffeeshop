@@ -8,7 +8,6 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
-  // Lock body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -34,12 +33,10 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-cream overflow-visible py-2">
       <nav className="relative max-w-6xl mx-auto border border-coffee/60 px-6 py-4 flex items-center justify-between text-coffee">
 
-        {/* Logo */}
         <h1 className="text-2xl font-semibold tracking-wide">
           <Link href="/">Caffeine</Link>
         </h1>
 
-        {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-10 text-sm tracking-wide">
           <li className={linkClass("/")}>
             <Link href="/">Home</Link>
@@ -55,7 +52,6 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-6 text-sm">
           <span className={linkClass("/login")}>
             <Link href="/login">Sign In</Link>
@@ -78,7 +74,6 @@ export default function Navbar() {
           </svg>
         </div>
 
-        {/* Mobile Hamburger */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden flex flex-col gap-1"
@@ -88,7 +83,6 @@ export default function Navbar() {
           <span className="w-6 h-[2px] bg-coffee"></span>
         </button>
 
-        {/* Mobile Dropdown */}
         {open && (
           <div className="absolute left-0 top-full w-full bg-coffee border-t border-cream/30 md:hidden">
             <div className="px-6 py-8 space-y-6 text-sm text-cream">

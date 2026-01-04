@@ -24,7 +24,6 @@ export default function ProductPage({ params }) {
     <div>
       <main className="bg-cream min-h-screen pb-28 md:pb-16">
         <Navbar />
-        {/* Top Bar */}
         <div className="flex items-center justify-between px-6 py-4 max-w-6xl mx-auto">
           <Link href="/shop" className="text-xl">
             ←
@@ -33,9 +32,7 @@ export default function ProductPage({ params }) {
           <span className="text-xl">♡</span>
         </div>
 
-        {/* Layout */}
         <div className="max-w-6xl mx-auto md:grid md:grid-cols-2 md:gap-16 md:px-6">
-          {/* Image */}
           <div className="px-6 md:px-0">
             <div className="relative h-64 md:h-[420px] rounded-2xl overflow-hidden bg-coffee/10">
               <Image
@@ -48,13 +45,11 @@ export default function ProductPage({ params }) {
             </div>
           </div>
 
-          {/* Content */}
           <div className="px-6 mt-6 space-y-6 md:mt-0 md:px-0">
             <h1 className="text-2xl md:text-4xl font-semibold">
               {product.title}
             </h1>
 
-            {/* Rating */}
             <div className="flex flex-row  ">
               <div className="flex items-center gap-2 text-sm me-10">
                 <span className="text-yellow-500">★</span>
@@ -62,7 +57,6 @@ export default function ProductPage({ params }) {
                 <span className="opacity-60">(230)</span>
               </div>
 
-              {/* Icons */}
               <div className="flex gap-4">
                 {["🔥", "☕", "📦"].map((icon, i) => (
                   <div
@@ -75,7 +69,6 @@ export default function ProductPage({ params }) {
               </div>
             </div>
 
-            {/* Description */}
             <div>
               <h3 className="font-semibold mb-1">Description</h3>
               <p className="text-sm opacity-70 leading-relaxed max-w-md">
@@ -83,8 +76,7 @@ export default function ProductPage({ params }) {
               </p>
             </div>
 
-            {/* Desktop Price + CTA */}
-            {/* Quantity */}
+           
             <div>
               <h3 className="font-semibold mb-2">Quantity</h3>
               <div className="flex items-center gap-4">
@@ -125,7 +117,6 @@ export default function ProductPage({ params }) {
           </div>
         </div>
 
-        {/* Mobile Bottom Bar */}
         <div className="fixed md:hidden bottom-0 inset-x-0 bg-white border-t border-coffee/10 px-6 py-4 flex items-center justify-between">
           <div>
             <p className="text-xs opacity-60">Price</p>

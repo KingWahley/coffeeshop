@@ -8,7 +8,6 @@ import Link from "next/link";
 export default function Hero() {
   const [mobileOffset, setMobileOffset] = useState(0);
 
-  // Mobile parallax (works on iOS + Android)
   useEffect(() => {
     let raf = null;
 
@@ -26,7 +25,6 @@ export default function Hero() {
 
   return (
     <section className="relative bg-coffee text-cream overflow-hidden">
-      {/* MOBILE PARALLAX IMAGE */}
       <div
         className="absolute inset-0 md:hidden pointer-events-none"
         style={{
@@ -42,11 +40,9 @@ export default function Hero() {
         />
       </div>
 
-      {/* Mobile overlay for readability */}
       <div className="absolute inset-0 bg-coffee/80 md:hidden"></div>
 
       <div className="relative max-w-6xl mx-auto px-8 py-20 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-        {/* Left content (static) */}
         <div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl leading-[1.15] font-semibold">
             Discover The
@@ -94,7 +90,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* DESKTOP PARALLAX IMAGE */}
         <Parallax speed={0.45}>
           <div className="relative hidden md:flex justify-end">
             <span className="absolute top-10 right-0 text-[180px] font-bold opacity-[0.04] select-none">

@@ -13,14 +13,10 @@ export default function Footer() {
         bg-no-repeat
       "
     >
-      {/* Overlay */}
       <div className="absolute inset-0 bg-coffee/95"></div>
 
-      {/* Content */}
       <div className="relative">
-        {/* Top Grid */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 border-t border-cream/30">
-          {/* Brand */}
           <div className="p-10 border-r border-cream/30">
             <div className="border border-cream/60 p-10 text-center">
               <h4 className="text-4xl font-semibold">Caffeine</h4>
@@ -31,7 +27,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Contact */}
           <div className="p-10 border-r border-cream/30">
             <h5 className="text-2xl font-semibold mb-6">Contact Us</h5>
 
@@ -48,7 +43,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Media & Social */}
           <div className="p-10">
             <div className="relative border border-cream/60 h-44 mb-8 overflow-hidden">
               <Image
@@ -75,7 +69,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="border-t border-cream/30 text-center py-6 text-sm opacity-70">
           Copyright: 2025 WebDevii
         </div>

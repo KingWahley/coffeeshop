@@ -33,10 +33,8 @@ export default function AboutPage() {
     <main className="bg-cream text-coffee">
       <Navbar />
 
-      {/* TOP SECTION */}
       <section className="px-8 py-10">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-          {/* IMAGE */}
           <div className="flex justify-center md:justify-start">
             <div className="relative w-[500px] h-[380px] rounded-2xl overflow-hidden">
               <Image
@@ -49,7 +47,6 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* TEXT */}
           <div>
             <h1 className="text-5xl font-semibold leading-tight">
               {content[activeTab].title}
@@ -59,7 +56,6 @@ export default function AboutPage() {
               {content[activeTab].text}
             </p>
 
-            {/* TABS */}
             <div className="mt-10 flex gap-6 border-b border-coffee/20 pb-4">
               <button
                 onClick={() => setActiveTab("mission")}
@@ -98,7 +94,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* BOTTOM SECTION */}
       <section className="px-8 pb-32 mt-10">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-semibold">
