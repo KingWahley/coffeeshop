@@ -1,14 +1,55 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Parallax from "./Parallax";
 
 export default function Hero() {
+  const [mobileOffset, setMobileOffset] = useState(0);
+
+  // Mobile parallax (works on iOS + Android)
+  useEffect(() => {
+    let raf = null;
+
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        setMobileOffset(window.scrollY * 0.18);
+        raf = null;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <section className="relative bg-coffee text-cream overflow-hidden">
-      <div className="max-w-6xl mx-auto px-8 py-20 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+
+      {/* MOBILE PARALLAX IMAGE */}
+      <div
+        className="absolute inset-0 md:hidden pointer-events-none"
+        style={{
+          transform: `translateY(${mobileOffset}px)`,
+        }}
+      >
+        <Image
+          src="/assets/pngwing.com.png"
+          alt="Coffee background"
+          fill
+          className="object-contain opacity-40"
+          priority
+        />
+      </div>
+
+      {/* Mobile overlay for readability */}
+      <div className="absolute inset-0 bg-coffee/80 md:hidden"></div>
+
+      <div className="relative max-w-6xl mx-auto px-8 py-20 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
         
         {/* Left content (static) */}
         <div>
-          <h1 className="text-5xl sm:text-5xl lg:text-6xl leading-[1.15] font-semibold">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl leading-[1.15] font-semibold">
             Discover The
             <br />
             Art Of Perfect
@@ -23,8 +64,7 @@ export default function Hero() {
 
           <div className="mt-10 flex gap-6">
             <button className="flex items-center gap-2 bg-cream text-coffee px-6 py-3 text-sm">
-              Order Now
-              <span className="text-lg">→</span>
+              Order Now <span className="text-lg">→</span>
             </button>
 
             <button className="border border-cream/70 px-6 py-3 text-sm">
@@ -48,7 +88,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right visual (parallax) */}
+        {/* DESKTOP PARALLAX IMAGE */}
         <Parallax speed={0.45}>
           <div className="relative hidden md:flex justify-end">
             <span className="absolute top-10 right-0 text-[180px] font-bold opacity-[0.04] select-none">

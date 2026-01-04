@@ -8,11 +8,9 @@ import Footer from "../components/Footer";
 export default function Home() {
   return (
     <main>
-      {/* Scroll buffer */}
-      <div className="h-12  flex justify-center Items-center p-4  bg-white">
+      <div className="h-12   flex justify-center Items-center p-4  bg-white">
         <p className="text-coffee">-- FREE SHIPPING ON ORDERS $50.00+ --</p>
       </div>
-
       <Navbar />
       <Hero />
       <Feature />

@@ -41,7 +41,7 @@ export default function Feature() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-20">
+        <div className="hidden md:grid md:grid-cols-2 items-center gap-20">
           <div className="order-2 md:order-1">
             <h3 className="text-4xl font-semibold">Jean’s Coffee</h3>
             <p className="mt-6 max-w-md text-sm leading-relaxed opacity-70">
