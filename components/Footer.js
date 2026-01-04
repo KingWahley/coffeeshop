@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer
@@ -16,10 +18,8 @@ export default function Footer() {
 
       {/* Content */}
       <div className="relative">
-
         {/* Top Grid */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 border-t border-cream/30">
-
           {/* Brand */}
           <div className="p-10 border-r border-cream/30">
             <div className="border border-cream/60 p-10 text-center">
@@ -42,15 +42,22 @@ export default function Footer() {
             </div>
 
             <p className="mt-10 opacity-70">
-              39 Brooklyn Street<br />
+              39 Brooklyn Street
+              <br />
               Covington, VA 244426
             </p>
           </div>
 
           {/* Media & Social */}
           <div className="p-10">
-            <div className="border border-cream/60 h-44 flex items-center justify-center mb-8">
-              <span className="opacity-60">Video / Image</span>
+            <div className="relative border border-cream/60 h-44 mb-8 overflow-hidden">
+              <Image
+                src="/assets/footer.jpeg"
+                alt="Coffee brewing"
+                fill
+                className="object-cover"
+                priority={false}
+              />
             </div>
 
             <h5 className="text-2xl font-semibold mb-4">Follow Us</h5>
@@ -72,7 +79,6 @@ export default function Footer() {
         <div className="border-t border-cream/30 text-center py-6 text-sm opacity-70">
           Copyright: 2025 WebDevii
         </div>
-
       </div>
     </footer>
   );

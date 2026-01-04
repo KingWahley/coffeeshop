@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Parallax from "./Parallax";
+import Link from "next/link";
 
 export default function Hero() {
   const [mobileOffset, setMobileOffset] = useState(0);
@@ -25,7 +26,6 @@ export default function Hero() {
 
   return (
     <section className="relative bg-coffee text-cream overflow-hidden">
-
       {/* MOBILE PARALLAX IMAGE */}
       <div
         className="absolute inset-0 md:hidden pointer-events-none"
@@ -46,7 +46,6 @@ export default function Hero() {
       <div className="absolute inset-0 bg-coffee/80 md:hidden"></div>
 
       <div className="relative max-w-6xl mx-auto px-8 py-20 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-        
         {/* Left content (static) */}
         <div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl leading-[1.15] font-semibold">
@@ -63,13 +62,20 @@ export default function Hero() {
           </p>
 
           <div className="mt-10 flex gap-6">
-            <button className="flex items-center gap-2 bg-cream text-coffee px-6 py-3 text-sm">
-              Order Now <span className="text-lg">→</span>
-            </button>
+            <Link
+              href="/shop"
+              className="flex items-center gap-2 bg-cream text-coffee px-6 py-3 text-sm hover:bg-coffee hover:text-cream hover:border border-cream"
+            >
+              Order Now
+              <span className="text-lg">→</span>
+            </Link>
 
-            <button className="border border-cream/70 px-6 py-3 text-sm">
+            <Link
+              href="#features"
+              className="hover:bg-cream hover:text-coffee  inline-block border border-cream/70 px-6 py-3 text-sm 87o63421q34567 p[p0o9y765ew432 "
+            >
               Explore More
-            </button>
+            </Link>
           </div>
 
           <div className="mt-16 flex gap-14">
@@ -106,7 +112,6 @@ export default function Hero() {
             </div>
           </div>
         </Parallax>
-
       </div>
     </section>
   );

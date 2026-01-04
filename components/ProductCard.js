@@ -10,7 +10,7 @@ export default function ProductCard({
   tags = [],
 }) {
   return (
-    <Link href={`/shop/${id}`} className="block">
+    <div  className="block">
       <div className="bg-cream rounded-xl overflow-hidden shadow-sm hover:opacity-95 transition">
 
         {/* Image */}
@@ -56,14 +56,14 @@ export default function ProductCard({
           <div className="flex items-center justify-between pt-2">
             <span className="text-3xl font-semibold">{price}</span>
 
-            <span className="bg-coffee text-cream px-6 py-3 rounded-xl flex items-center gap-2">
-              Order Now
+            <Link href="/shop" className="bg-coffee text-cream px-6 py-3 rounded-xl flex items-center gap-2">
+             Open Shop
               <span className="text-lg">→</span>
-            </span>
+            </Link>
           </div>
 
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

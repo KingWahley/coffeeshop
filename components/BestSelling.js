@@ -3,6 +3,7 @@
 import { useState } from "react";
 import ProductCard from "./ProductCard";
 
+
 const PRODUCT_MAP = {
   All: [
     {
@@ -134,14 +135,12 @@ export default function BestSelling() {
   return (
     <section className="bg-caramel px-8 py-20">
       <div className="max-w-6xl mx-auto text-center">
-        {/* Heading */}
         <h3 className="text-5xl font-semibold">Best Selling Item</h3>
         <p className="max-w-2xl mx-auto mt-6 text-sm opacity-70 leading-relaxed">
           These are the favorites our customers keep coming back for. Carefully
           crafted, consistently balanced, and loved for their rich flavor.
         </p>
 
-        {/* Filters */}
         <div className="flex justify-center gap-10 mt-16 text-lg">
           {Object.keys(PRODUCT_MAP).map((filter) => (
             <button
@@ -158,14 +157,12 @@ export default function BestSelling() {
           ))}
         </div>
 
-        {/* Products */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20 min-h-[480px]">
           {visible.map((product) => (
             <ProductCard key={product.title} {...product} />
           ))}
         </div>
 
-        {/* Slider Controls */}
         <div className="flex justify-center gap-4 mt-20">
           <button
             onClick={prev}

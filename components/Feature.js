@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Feature() {
   return (
-    <section className="bg-cream px-8 py-32">
+    <section id="features"  className="bg-cream px-8 py-32">
       <div className="max-w-6xl mx-auto space-y-40">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-20">
           <div className="relative flex justify-start">
