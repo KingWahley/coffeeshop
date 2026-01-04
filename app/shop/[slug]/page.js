@@ -1,14 +1,17 @@
 "use client";
 
 import Image from "next/image";
+
 import { products } from "../../data/product";
 import { useCart } from "../../../context/CartContext";
+import { useRouter } from "next/navigation";
 
 import { useState } from "react";
 
 import Link from "next/link";
 
 export default function ProductPage({ params }) {
+  const router = useRouter();
   const product = products.find((p) => p.id === params.slug);
   const { addToCart } = useCart();
   const [qty, setQty] = useState(1);
@@ -107,10 +110,13 @@ export default function ProductPage({ params }) {
             </div>
 
             <button
-              onClick={() => addToCart({ ...product,  })}
               className="bg-[#b87333] text-white px-12 py-4 rounded-2xl font-semibold hover:opacity-90 transition"
+              onClick={() => {
+                addToCart({ ...product, qty });
+                router.push("/checkout");
+              }}
             >
-              Check Out
+              Buy Now
             </button>
           </div>
         </div>
@@ -124,10 +130,13 @@ export default function ProductPage({ params }) {
         </div>
 
         <button
-          onClick={() => addToCart({ ...product, })}
-          className="bg-[#b87333] text-white px-10 py-3 rounded-2xl font-semibold"
+          className="bg-[#b87333] text-white px-12 py-4 rounded-2xl font-semibold hover:opacity-90 transition"
+          onClick={() => {
+            addToCart({ ...product, qty });
+            router.push("/checkout");
+          }}
         >
-          Check Out
+          Buy Now
         </button>
       </div>
     </main>

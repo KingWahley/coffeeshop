@@ -9,27 +9,36 @@ export function CartProvider({ children }) {
 
   function addToCart(product) {
     setCart((prev) => {
-      const exists = prev.find((p) => p.id === product.id);
-      if (exists) {
-        return prev.map((p) =>
-          p.id === product.id ? { ...p, qty: p.qty + 1 } : p
+      const existing = prev.find((item) => item.id === product.id);
+
+      if (existing) {
+        return prev.map((item) =>
+          item.id === product.id
+            ? { ...item, qty: item.qty + product.qty }
+            : item
         );
       }
-      return [...prev, { ...product, qty: 1 }];
+
+      return [...prev, product];
     });
   }
 
   function removeFromCart(id) {
-    setCart((prev) => prev.filter((p) => p.id !== id));
+    setCart((prev) => prev.filter((item) => item.id !== id));
   }
 
   function updateQty(id, qty) {
     setCart((prev) =>
-      prev.map((p) => (p.id === id ? { ...p, qty } : p))
+      prev.map((item) =>
+        item.id === id ? { ...item, qty: Math.max(1, qty) } : item
+      )
     );
   }
 
-  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.qty,
+    0
+  );
 
   return (
     <CartContext.Provider
@@ -40,4 +49,6 @@ export function CartProvider({ children }) {
   );
 }
 
-export const useCart = () => useContext(CartContext);
+export function useCart() {
+  return useContext(CartContext);
+}
