@@ -1,22 +1,26 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const TESTIMONIALS = [
   {
     name: "Shalima Hayden",
     text: "Really Amazing To Me. The Combination Was Very Good.",
     rating: 5,
+    photo: "/assets/Customer1.jpg",
   },
   {
     name: "Michael Brown",
     text: "Caffeine Delivers Consistent Quality Every Time. ",
     rating: 5,
+    photo: "/assets/Customer2.jpg",
   },
   {
     name: "Emily Carter",
     text: "The Flavor Is Rich, Smooth, And Perfectly Balanced.",
     rating: 4,
+    photo: "/assets/Customer3.jpg",
   },
 ];
 
@@ -59,8 +63,14 @@ export default function Testimonial() {
 
           <div className="bg-coffee  text-cream px-20 py-24 text-center relative">
             <div className="absolute -top-12 left-1/2 -translate-x-1/2">
-              <div className="w-24 h-24 rounded-full border-4 border-cream bg-black/30 flex items-center justify-center">
-                <span className="text-xs opacity-60">Photo</span>
+              <div className="w-24 h-24 rounded-full border-cream bg-black/30 flex items-center justify-center">
+                <Image
+                  src={t.photo}
+                  alt="Coffee brewing"
+                  fill
+                  className="object-cover rounded-full border-4"
+                  priority={false}
+                />
               </div>
             </div>
 

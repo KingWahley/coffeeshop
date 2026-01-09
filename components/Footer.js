@@ -54,7 +54,7 @@ export default function Footer() {
               />
             </div>
 
-            <h5 className="text-2xl font-semibold mb-4">Follow Us</h5>
+            {/* <h5 className="text-2xl font-semibold mb-4">Follow Us</h5>
 
             <div className="flex gap-4">
               {["P", "I", "T", "F"].map((icon) => (
@@ -65,12 +65,12 @@ export default function Footer() {
                   {icon}
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
 
         <div className="border-t border-cream/30 text-center py-6 text-sm opacity-70">
-          Copyright: 2025 WebDevii
+          Copyright © {new Date().getFullYear()} WebDevii
         </div>
       </div>
     </footer>

@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Feature() {
   return (
-    <section id="features"  className="bg-cream px-8 py-32">
+    <section id="features" className="bg-cream px-8 py-32">
       <div className="max-w-6xl mx-auto space-y-40">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-20">
           <div className="relative flex justify-start">
@@ -34,10 +35,11 @@ export default function Feature() {
               high-quality beans, roast them to perfection, and craft each drink
               to deliver rich flavor, balance, and aroma in every sip.
             </p>
-
-            <button className="mt-8 flex items-center gap-2 bg-coffee text-cream px-6 py-3 text-sm">
-              View All <span className="text-lg">→</span>
-            </button>
+            <Link href="/shop">
+              <button className="mt-8 flex items-center gap-2 bg-coffee text-cream px-6 py-3 text-sm">
+                View All <span className="text-lg">→</span>
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -51,9 +53,11 @@ export default function Feature() {
               that feels familiar yet distinctive.
             </p>
 
-            <button className="mt-8 flex items-center gap-2 bg-coffee text-cream px-6 py-3 text-sm">
-              View All <span className="text-lg">→</span>
-            </button>
+            <Link href="/shop">
+              <button className="mt-8 flex items-center gap-2 bg-coffee text-cream px-6 py-3 text-sm">
+                View All <span className="text-lg">→</span>
+              </button>
+            </Link>
           </div>
 
           <div className="relative flex justify-end order-1 md:order-2">

@@ -52,7 +52,7 @@ export default function ShopPage() {
           </div>
         </div>
 
-        <div className="relative rounded-2xl overflow-hidden mb-8 bg-[#a87753] text-cream">
+        <div className="relative md:hidden rounded-2xl overflow-hidden mb-8 bg-[#a87753] text-cream">
           <div className="center  h-full w-1/2">
             <Image
               src="/assets/promo.jpg"
