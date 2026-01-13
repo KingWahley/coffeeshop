@@ -27,8 +27,9 @@ export default function ShopPage() {
 
   return (
     <div>
-      <main className="bg-cream min-h-screen px-4 pt-8 pb-24">
-        <Navbar />
+      <Navbar />
+      <main className="bg-cream min-h-screen px-4 pt-8 pb-24 mx-auto max-w-7xl">
+        
 
         <div className="sticky top-[72px] z-40 bg-cream pt-4">
           <div className="flex items-center gap-3 mb-6">
